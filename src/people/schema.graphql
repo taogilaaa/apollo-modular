@@ -1,0 +1,18 @@
+type Person {
+  """
+  Id
+  """
+  id: Int!
+  firstName: String
+  lastName: String
+  """
+  the fullName is user combination of (`firstName` `lastName`)
+  """
+  fullName: String
+  email: String
+}
+
+type Query {
+  people: [Person]
+  person(id: Int!): Person
+}

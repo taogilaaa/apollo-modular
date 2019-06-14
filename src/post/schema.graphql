@@ -1,0 +1,18 @@
+"""
+Post is data of saved description and imageUrl
+"""
+type Post {
+  id: Int!
+  description: String
+  imageUrl: String
+}
+
+type Query {
+  posts(filter: String): [Post]
+  post(id: Int!): Post
+}
+
+type Mutation {
+  createPost(imageUrl: String!, description: String!): Post!
+  deletePost(id: Int!): Post!
+}

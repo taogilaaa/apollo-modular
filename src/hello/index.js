@@ -1,8 +1,4 @@
-import { importSchema } from 'graphql-import';
-import { makeExecutableSchema } from 'apollo-server';
+import typeDefs from './schema.graphql';
 import resolvers from './resolvers';
 
-const typeDefs = importSchema('./src/hello/schema.graphql');
-const schema = makeExecutableSchema({ typeDefs, resolvers });
-
-export default schema;
+export default { typeDefs, resolvers };

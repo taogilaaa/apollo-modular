@@ -1,4 +1,4 @@
-type Person {
+extend type Person {
   """
   Id
   """
@@ -12,7 +12,7 @@ type Person {
   email: String
 }
 
-type Query {
+extend type Query {
   people: [Person]
   person(id: Int!): Person
 }

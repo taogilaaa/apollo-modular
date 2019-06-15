@@ -1,10 +1,11 @@
 {
   "name": "apollo-modular",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node src/index.js"
+    "start": "npm run build && node dist/main.js",
+    "build": "webpack"
   },
   "dependencies": {
     "apollo-server": "^2.6.3",
@@ -15,6 +16,10 @@
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "prettier": "^1.18.2"
+    "babel-loader": "^8.0.6",
+    "prettier": "^1.18.2",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-node-externals": "^1.7.2"
   }
 }

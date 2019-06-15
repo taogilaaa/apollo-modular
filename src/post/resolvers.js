@@ -6,6 +6,16 @@ let posts = [
 
 // Provide resolver functions for your schema fields
 const resolvers = {
+  Post: {
+    imageUrl: ({ id }) => {
+      const post = posts.find((post) => post.id === id);
+      return post ? post.imageUrl : undefined;
+    },
+    description: ({ id }) => {
+      const post = posts.find((post) => post.id === id);
+      return post ? post.description : undefined;
+    },
+  },
   Query: {
     posts: (_, { filter }) =>
       posts.filter((post) =>

@@ -4,29 +4,36 @@ let people = [
     firstName: 'Michael',
     lastName: 'Suyama',
     email: 'suyama@wp.co',
-    likedPosts: [1, 2],
+    likedPosts: [
+      { id: 1, likedDate: new Date() },
+      { id: 2, likedDate: new Date() },
+    ],
   },
   {
     id: 2,
     firstName: 'Nancy',
     lastName: 'DaVolio',
     email: 'davolio@wp.co',
-    likedPosts: [1],
+    likedPosts: [{ id: 2, likedDate: new Date() }],
   },
   {
     id: 3,
     firstName: 'David',
     lastName: 'Buchanan',
     email: 'buchanan@wp.co',
-    likedPosts: [2, 3],
+    likedPosts: [
+      { id: 2, likedDate: new Date() },
+      { id: 3, likedDate: new Date() },
+    ],
   },
 ];
 
 const resolvers = {
   Person: {
     fullName: ({ firstName, lastName }) => `${firstName} ${lastName}`,
-    // likedPosts: ({ likedPosts }) =>
-    //   posts.filter((post) => likedPosts.includes(post.id)),
+    likedPosts: ({ likedPosts }) => {
+      return likedPosts;
+    },
   },
   Query: {
     people: () => people,
